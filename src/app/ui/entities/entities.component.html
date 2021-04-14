@@ -1,0 +1,11 @@
+<h1>Entities</h1>
+<div *ngFor="let entity of entities; let i = index">
+  <mat-form-field appearance="fill">
+    <mat-label>{{entity.label}}</mat-label>
+    <mat-select (selectionChange)="onChange($event, i)" [disabled]="!breakdownEnabledFormControls[entity.name].value" [(ngModel)]="entitySelections[entity.name]" [formControl]="selectFormControls[entity.name]" multiple>
+      <mat-option *ngFor="let option of entityOptions[entity.name]" [value]="option.name">{{option.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-checkbox  (change)="onCheckChange($event, i)"[formControl]="breakdownEnabledFormControls[entity.name]">Breakdown</mat-checkbox>
+  <span class="preset-container" *ngIf="breakdownEnabledFormControls[entity.name].value">Using Preset: <span class="preset-value">{{entitySelectionPresets[entity.name]}}<mat-icon>keyboard_arrow_down</mat-icon></span> </span>
+</div>

@@ -1,0 +1,35 @@
+{
+  "id": "00CE935051F5E40221F11D84ADFD76CEE0F0AE91",
+  "name": "Sandro Nunes",
+  "sets": [
+    {
+      "id": "05FA148F36274C02721C0216F7A5163FEC3C1B71",
+      "name": "Competitors",
+      "fieldName": "book",
+      "idFieldName": "bookmaker_id",
+      "values": [
+        {
+          "name": "IBCBET",
+          "id": "IBCBET"
+        },
+        {
+          "name": "188bet",
+          "id": "188bet"
+        },
+        {
+          "name": "10BET",
+          "id": "10BET"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "3D75F3376271388CCF90A04D65B6F3F37A16DA94",
+      "name": "Reference Bookmaker",
+      "fieldName": "book",
+      "idFieldName": "bookmaker_id",
+      "values": [{ "name": "PinnacleSports", "id": "PinnacleSports" }]
+    }
+  ]
+}

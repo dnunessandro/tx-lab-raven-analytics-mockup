@@ -1,0 +1,122 @@
+{
+  "entities": [
+    {
+      "name": "bookmakers",
+      "label": "Bookmakers",
+      "fieldName": "book",
+      "idFieldName": "bookmaker_id",
+      "multiSelect": true,
+      "parents": [],
+      "children": ["competitions"],
+      "defaultSelections": {
+        "n": 3,
+        "by": "cardinality",
+        "ascending": false
+      },
+      "breakdownCheckedByDefault": true
+    },
+    {
+      "name": "sports",
+      "label": "Sports",
+      "fieldName": "sport",
+      "idFieldName": "sport_id",
+      "multiSelect": true,
+      "parents": ["bookmakers"],
+      "children": ["leagues"],
+      "defaultSelections": {
+        "n": 2,
+        "by": "cardinality",
+        "ascending": false
+      },
+      "breakdownCheckedByDefault": true
+    },
+    {
+      "name": "competitions",
+      "label": "Competitions",
+      "fieldName": "league",
+      "idFieldName": "league_id",
+      "multiSelect": true,
+      "parents": ["sports"],
+      "children": ["matches"],
+      "defaultSelections": {
+        "n": 3,
+        "by": "cardinality",
+        "ascending": false
+      }
+    },
+    {
+      "name": "matches",
+      "label": "Matches",
+      "fieldName": "match",
+      "idFieldName": "tipid",
+      "multiSelect": true,
+      "parents": ["leagues"],
+      "children": ["odd_types"],
+      "defaultSelections": {
+        "n": 30,
+        "by": "cardinality",
+        "ascending": false
+      }
+    },
+    {
+      "name": "odd_types",
+      "label": "Odd Types",
+      "fieldName": "ot",
+      "idFieldName": "odds_type_id",
+      "multiSelect": true,
+      "parents": ["matches"],
+      "children": [],
+      "defaultSelections": {
+        "n": 2,
+        "by": "cardinality",
+        "ascending": false
+      }
+    }
+  ],
+  "filters": [
+    {
+      "name": "time",
+      "label": "Time",
+      "type": "time",
+      "fieldName": "day",
+      "options": [
+        { "value": "-1", "label": "Last Day" },
+        { "value": "-7", "label": "Last Week" },
+        { "value": "-30", "label": "Last Month" },
+        { "value": "-180", "label": "Last 6 Months" }
+      ],
+      "defaultValue": "-7",
+      "modes": [
+        { "value": "aggregate", "label": "Aggregate Over Entire Period" },
+        { "value": "slice", "label": "Breakdown By Day" }
+      ],
+      "defaultMode": {
+        "value": "aggregate",
+        "label": "Aggregate Over Entire Period"
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "name": "overround",
+      "label": "Overround",
+      "enabledByDefault": false,
+      "aggregations": ["min", "average", "median", "max"],
+      "defaultAggregation": "average"
+    },
+    {
+      "name": "downtime",
+      "label": "Downtime",
+      "enabledByDefault": true,
+      "aggregations": ["min", "average", "median", "max"],
+      "defaultAggregation": "average"
+    },
+    {
+      "name": "price_update",
+      "label": "Price Updates",
+      "enabledByDefault": false,
+      "aggregations": ["min", "average", "median", "max"],
+      "defaultAggregation": "average"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "book": [
+    { "name": "PinnacleSports", "id": 83, "cardinality": 542 },
+    {
+      "name": "Sbobet.com",
+      "id": 327,
+      "cardinality": 342
+    },
+    {
+      "name": "IBCBET",
+      "id": 285,
+      "cardinality": 23
+    },
+    {
+      "name": "188bet",
+      "id": 365,
+      "cardinality": 242
+    },
+    {
+      "name": "10BET",
+      "id": 274,
+      "cardinality": 343
+    }
+  ],
+  "sport": [
+    { "name": "golf", "id": 12, "cardinality": 43 },
+    { "name": "soccer", "id": 1, "cardinality": 983 },
+    { "name": "boxing", "id": 19, "cardinality": 234 },
+    { "name": "basketball", "id": 2, "cardinality": 542 },
+    { "name": "tennis", "id": 2, "cardinality": 222 }
+  ],
+  "league": [
+    { "name": "League 1", "id": 1, "cardinality": 234 },
+    { "name": "League 2", "id": 2, "cardinality": 523 },
+    { "name": "League 3", "id": 3, "cardinality": 432 },
+    { "name": "League 4", "id": 4, "cardinality": 434 }
+  ],
+  "match": [
+    { "name": "Match 1", "id": 1, "cardinality": 345 },
+    { "name": "Match 2", "id": 2, "cardinality": 534 },
+    { "name": "Match 3", "id": 3, "cardinality": 354 },
+    { "name": "Match 4", "id": 4, "cardinality": 423 },
+    { "name": "Match 5", "id": 5, "cardinality": 423 },
+    { "name": "Match 6", "id": 6, "cardinality": 423 }
+  ],
+  "ot": [
+    { "name": "1x2", "id": 1, "cardinality": 342 },
+    { "name": "double teams to score", "id": 334 },
+    { "name": "asian handicap", "id": 134 }
+  ]
+}

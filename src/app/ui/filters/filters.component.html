@@ -1,0 +1,12 @@
+<h1>Filters</h1>
+<div *ngFor="let filter of filters">
+  <mat-form-field appearance="fill">
+    <mat-label>{{filter.label}}</mat-label>
+    <mat-select [(ngModel)]="filterSelections[filter.name]">
+      <mat-option *ngFor="let option of filterOptions[filter.name]" [value]="option.value">{{option.label}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-radio-group (change)="onChange($event)" [formControl]="filterModesFormControls[filter.name]" aria-label="Select an option">
+    <mat-radio-button *ngFor="let mode of filterModeOptions[filter.name]" [value]="mode.value">{{mode.label}}</mat-radio-button>&nbsp;
+  </mat-radio-group>
+</div>

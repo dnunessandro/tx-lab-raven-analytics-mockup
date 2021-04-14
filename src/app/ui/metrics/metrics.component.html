@@ -1,0 +1,8 @@
+<h1>Metrics</h1>
+<div *ngFor="let metric of metrics; let i=index">
+  <h2>{{metric.label}}</h2>
+  <mat-checkbox (change)="onCheckChange($event, i)" [formControl]="metricEnableFormControls[metric.name]">Enable</mat-checkbox>
+  <mat-radio-group [disabled]="!metricEnableFormControls[metric.name].value" (change)="onRadioChange($event, i)" [formControl]="metricFormControls[metric.name]" aria-label="Select an option">
+    <mat-radio-button *ngFor="let agg of metricOptions[metric.name]" [value]="agg">{{agg}}</mat-radio-button>&nbsp;
+  </mat-radio-group>
+</div>
